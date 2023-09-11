@@ -38,7 +38,7 @@ class thread_pool
 {
 private:
 
-    // 包装任务类
+    // 包装任务类, 在 work_steal_queue.h 中定义
     typedef function_wrapper task_type;
 
     // 数据成员声明顺序很重要

@@ -25,7 +25,7 @@ T parallel_accumulate(Iterator first,Iterator last,T init)
     // 任务数为物理线程数的2倍
     // 划分为 num_blocks 个任务
     unsigned const thread_count=std::thread::hardware_concurrency();
-    unsigned long const num_blocks = 2 * thread_count;
+    unsigned long const num_blocks = 20 * thread_count;
 
     // 每个任务计算 block_size 的长度
     unsigned long const block_size = length / num_blocks;

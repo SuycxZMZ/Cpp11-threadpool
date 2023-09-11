@@ -28,8 +28,10 @@
 ```C++
 .
 ├── Makefile
+├── README.md
 ├── include
 │   ├── parallel_accumulate.h
+│   ├── parallel_qsort.h
 │   ├── thread_pool.h
 │   ├── threadsafe_queue.h
 │   └── work_steal_queue.h
@@ -53,7 +55,23 @@ GNU Make 4.3
 
 经测试用c++11到20标准都可以编译，makefile文件第10行可以更改
 
-```测试:make run```
+**测试:**
+运行:```C++make run```
+测试了线程池在 并行累加算法 和 并行快速排序的性能, 结果如下, 结果图一乐。
+但是发现了问题:链表的快速排序用线程池非常慢, 个人猜测可能是快排递归栈太深, 频繁提交任务造成的。
+
+```C++
+========== std::accumulate ========== 
+Time: 98 ms
+ ========== parallel_accumulate ========== 
+Time: 15 ms
+ ========== list<int>.sort() ========== 
+Time: 10 ms
+ ========== parallel_accumulate ========== 
+Time: 4356 ms
+```
+
+
 
 
 
