@@ -25,7 +25,7 @@
 4，设计 function_wrapper 类的原因: packaged_task的实例只能移动不能复制, std::function 要求本身所含的函数对象可以拷贝构造。function_wrapper 任务包装类, 可以包装任何可调用对象, 对外消除对象类型。任务窃取队列里的成员，以及线程池中实例化 threadsafe_queue 的类型都是 function_wrapper 。
 
 **代码结构：**
-
+```C++
 .
 ├── Makefile
 ├── include
@@ -39,6 +39,7 @@
     ├── main.cpp
     ├── thread_pool.cpp
     └── work_steal_queue.cpp
+```
 
 main.cpp为测试代码，其他的可以直接拿走编译
 
