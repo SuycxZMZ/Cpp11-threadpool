@@ -3,8 +3,8 @@
 #include <chrono>
 #include <vector>
 #include <numeric>
-#include "parallel_qsort.h"
-#include "parallel_accumulate.h"
+#include "../include/parallel_qsort.h"
+#include "../include/parallel_accumulate.h"
 
 // 线程池测试代码, 用 并行累加算法 和 并行快速排序 测试
 thread_local unsigned thread_pool::my_index = 1;
