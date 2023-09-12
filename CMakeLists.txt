@@ -6,12 +6,11 @@ project(CPP11-THREADPOOL)
 
 #add compile options
 set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20")
-add_compile_options("-Wall")
+
+add_compile_options("-Wall" "-pthread")
 
 #set CMAKE_BUILD_TYPE
 set( CMAKE_BUILD_TYPE Debug )
-
-add_compile_options("-pthread")
 
 # set output binary path 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
